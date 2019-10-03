@@ -14,19 +14,29 @@
 </head>
 
 <body>
+        <img src="" id="bg">
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">Name TBD:</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <button type="button" class="btn btn-outline-secondary" id="takeMeHome">Take Me Home</button>
+        <!-- <form class="form-inline"> -->
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Take Me Home</button> -->
+        <!-- </form> -->
     </nav>
 
-    <div class="main-container">
+    <!-- Navbar-->
+    <div class="main-container container">
+      <!-- In the main container we will start with the leafLet Map showing all the tooltips for the National Parks -->
         <h2>PUT SOMETHING IN ME</h2>
+        <!-- The user will put a state in and on click the container will change the map into cards with all the parks in that state-->
+        <!-- on click of the card a modal will pop up with all the info -->
+         <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search My State</button>
+        </form>
     </div>
 
-
+    <!-- Click function "take me home" needs to reset us back to the home page-->
     <footer>
         <div class="container">
             Copyright &copy;
