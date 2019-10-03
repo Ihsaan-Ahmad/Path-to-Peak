@@ -4,7 +4,7 @@
 //Start Function===============================================================================================
 $(document).ready(function(){
     function imageScroller() {
-        var images = ["../bg2.jpeg", "../fallroad.jpg"];
+        var images = ["assets/images/bg2.jpeg", "assets/images/fallroad.jpg"];
         var index = 0;
         $("#bg").attr("src", images[index]);
     
@@ -44,8 +44,8 @@ var parksUrl =
 $.ajax({
     method: "GET",
     url: parksUrl
-}).then(function (response) {
-    console.log(response);
+}).then(function (imgResponse) {
+    console.log(imgResponse);
 });
 
 // HOME PAGE====================================================================================================
@@ -53,18 +53,21 @@ $.ajax({
 $("#takeMeHome").on("click", function() {
 //console.log(alert("this button works!"));
 
-    
-    
-    
 })
 // LINDSAY: ON STATE PAGE ======================================================================================
+
 // When user enters a state into the search bar it hides container containing home page html
+
 // If the state is not a real state name (misspelled, not in the US, etc.,) display error message
+
 // Populates screen with cards of each national park in the state
+
 // Each card contains park name (AT LEAST--WE WILL DISCUSS AS GROUP WHAT ELSE TO DISPLAY)
 
 // MODELS =======================================================================================================
+
 // On state page with all parks: when user clicks on a card, card pops up a model about that park
+
 // Individual park model: Populates with park information from NPS API, populates with brewery info from brewery API
 
 
