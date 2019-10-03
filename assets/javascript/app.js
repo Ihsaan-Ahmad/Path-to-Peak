@@ -1,5 +1,6 @@
 /*Global Varibales=============================================================================================
 */ var parkInfo;
+var imageResponse;
 
 //Start Function===============================================================================================
 $(document).ready(function () {
@@ -25,6 +26,19 @@ $(document).ready(function () {
 
   // API
 
+  //Images fixed and working AJAX
+  //Unsplash API Below: We are working on having the Unsplash API information incorporate photo based on image and location.
+  var userSearch = "" // What ever attribute they clicked on will go into the seach for our API Example"seach a park, click on park, image is random generated with that parks image"
+  var parksUrl =
+    "https://api.unsplash.com/photos/random/?client_id=de60a94209a9bef884f3a7ad3716dcb45770113151dea2b8e5aa7acc131efc54&query=" + userSearch; //<---here is where our users search generates image related from API
+  $.ajax({
+    method: "GET",
+    url: parksUrl
+  }).then(function (imgResponse) {
+    imageResponse = imgResponse;
+    console.log(imageResponse);
+  });
+
   //National Park API is below
   var queryURL =
     //Hide our key once ready to push! (12:57pm)
@@ -41,7 +55,9 @@ $(document).ready(function () {
     console.log(numParks)
     for (i = 0; i < numParks; i++) {
       var parkName = parkInfo.data[i].fullName;
+      userSearch = parkName;
       var parkDesignation = parkInfo.data[i].designation;
+      var parkImage = imageResponse.urls.full;
       console.log(parkName);
       console.log(parkDesignation);
 
@@ -51,7 +67,11 @@ $(document).ready(function () {
       // Append card elements 
       stateParkCard.addClass("card")
       stateParkCard.attr("style", "width: 18rem;");
-      var stateImage = $("<img>").attr({ src: "mountain.jpg", class: "card-img-top", alt: "..." })
+
+      // Generating image from Unsplash
+      // var parkImage = 
+
+      var stateImage = $("<img>").attr({ src: parkImage, class: "card-img-top", alt: "..." })
       stateParkCard.append(stateImage)
       var stateParkCardBody = $("<div class='card-body'>")
       stateParkCard.append(stateParkCardBody)
@@ -66,17 +86,7 @@ $(document).ready(function () {
     console.log(parkInfo)
   });
 
-  //Images fixed and working AJAX
-  //Unsplash API Below: We are working on having the Unsplash API information incorporate photo based on image and location.
-  var userSearch = "" // What ever attribute they clicked on will go into the seach for our API Example"seach a park, click on park, image is random generated with that parks image"
-  var parksUrl =
-    "https://api.unsplash.com/photos/random/?client_id=de60a94209a9bef884f3a7ad3716dcb45770113151dea2b8e5aa7acc131efc54&query=" + userSearch; //<---here is where our users search generates image related from API
-  $.ajax({
-    method: "GET",
-    url: parksUrl
-  }).then(function (imgResponse) {
-    console.log(imgResponse);
-  });
+
 
   // HOME PAGE====================================================================================================
   // "take me home" button says take me home
