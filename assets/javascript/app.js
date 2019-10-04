@@ -18,11 +18,16 @@ $(document).ready(function(){
             $("#bg").attr("src", images[index]);
             console.log(index);
           }
-        }, 2000);
+        }, 4000);
       }
       imageScroller();
 
+$("#searchButton").click(function() {
+    event.preventDefault();
+    $("#searchBar").toggle();
+    $("#searchButton").toggle();
 
+});
 // API
 
 //National Park API is below

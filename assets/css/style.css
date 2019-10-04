@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'npfont';
+    src:url('./NationalPark-Heavy.otf');
+    /* src:url('../fonts/et-lined41d.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/et-line.woff') format('woff'),
+        url('../fonts/et-line.ttf') format('truetype'),
+        url('../fonts/et-line.svg#et-line') format('svg'); */
+    font-weight: normal;
+    font-style: normal;
+ }
 
 nav {
     position: fixed;
@@ -20,7 +30,9 @@ nav {
     text-decoration: none;
   }
   
-
+#searchBar {
+    display: none;
+}
 .main-container {
     padding: 20px;
     margin: 20px;
@@ -54,5 +66,10 @@ nav {
     z-index: -1;
     max-width: 100%;
     /* max-height: 100%; */
+
+}
+
+body {
+    font-family: npfont;
 
 }

@@ -12,6 +12,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" text="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 
 <body>
@@ -28,7 +30,7 @@
     <!-- Navbar-->
     <div class="main-container container mx-auto">
       <!-- In the main container we will start with the leafLet Map showing all the tooltips for the National Parks -->
-        <h2>PUT SOMETHING IN ME</h2>
+        <h2 class="npfont">PUT SOMETHING IN ME</h2>
          <div>
              <div>
                  <h3>Fill me!</h3>
@@ -37,8 +39,12 @@
         <!-- The user will put a state in and on click the container will change the map into cards with all the parks in that state-->
         <!-- on click of the card a modal will pop up with all the info -->
          <form class="form">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search My State</button>
+             <div id="searchBar">
+                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                 <button><i class="fas fa-search"></i></button>
+
+             </div>
+            <button class="btn btn-outline-secondary my-2 my-sm-0" id="searchButton" type="submit"><i class="fas fa-search"></i> Search My State</button>
         </form>
     </div>
 
