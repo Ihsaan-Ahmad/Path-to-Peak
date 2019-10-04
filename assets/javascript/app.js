@@ -4,7 +4,7 @@
 //Start Function===============================================================================================
 $(document).ready(function(){
     function imageScroller() {
-        var images = ["assets/images/bg2.jpeg", "assets/images/fallroad.jpg"];
+        var images = ["assets/images/bg2.jpeg", "assets/images/fallroad.jpg", "assets/images/bryce2.jpeg", "assets/images/tetons.jpeg", "assets/images/beardunes.jpeg","assets/images/antelope.jpeg", "assets/images/bison.jpeg", "assets/images/rocky.jpeg", "assets/images/bear.jpeg","assets/images/bryce.jpeg", "assets/images/fjords.jpeg", "assets/images/geyser.jpeg", "assets/images/joshua.jpeg", "assets/images/glacier.jpeg", "assets/images/moose.jpeg", "assets/images/redwoods.jpeg", "assets/images/northrim.jpeg","assets/images/silent.jpeg", "assets/images/whitesands.jpeg", "assets/images/spring.jpeg", "assets/images/yosemite.jpeg", "assets/images/ysfalls.jpeg", "assets/images/zion.jpeg"];
         var index = 0;
         $("#bg").attr("src", images[index]);
     
@@ -18,11 +18,16 @@ $(document).ready(function(){
             $("#bg").attr("src", images[index]);
             console.log(index);
           }
-        }, 2000);
+        }, 4000);
       }
       imageScroller();
 
+$("#searchButton").click(function() {
+    event.preventDefault();
+    $("#searchBar").toggle();
+    $("#searchButton").toggle();
 
+});
 // API
 
 //National Park API is below
