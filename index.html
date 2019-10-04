@@ -17,17 +17,19 @@
 </head>
 
 <body>
-        <img src="" id="bg">
+    <img src="" id="bg">
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#"><h2><i class="fas fa-map-signs"></i> Path to Peak <i class="fas fa-mountain"></i></h2></a>
         <button type="button" class="btn btn-outline-secondary" id="takeMeHome">Take Me Home</button>
         <!-- <form class="form-inline"> -->
-            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Take Me Home</button> -->
+        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Take Me Home</button> -->
         <!-- </form> -->
     </nav>
 
+    <button class="btn-primary btn" id="stateButton">BUTTON</button>
     <!-- Navbar-->
+
     <div class="main-container container mx-auto">
       <!-- In the main container we will start with the leafLet Map showing all the tooltips for the National Parks -->
         <h2 class="npfont"><i class="fas fa-compass"></i> PUT SOMETHING IN ME <i class="fas fa-tree"></i></h2>
@@ -50,7 +52,7 @@
 
     <!-- Click function "take me home" needs to reset us back to the home page-->
     <footer>
-        <div class="container">
+        <div class="container" id="card">
             Copyright &copy;
         </div>
     </footer>
@@ -67,6 +69,7 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/stateCardGenerator.js"></script>
     <script src="assets/javascript/app.js"></script>
 
 </body>
