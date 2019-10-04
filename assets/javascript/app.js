@@ -2,6 +2,7 @@
 */ var parkInfo;
 var imageResponse;
 var stateSelected = "TX";
+var unsplashSearch = "";
 
 //Start Function===============================================================================================
 $(document).ready(function () {
@@ -30,12 +31,11 @@ $(document).ready(function () {
   //Images fixed and working AJAX
   //Unsplash API Below: We are working on having the Unsplash API information incorporate photo based on image and location.
   function unsplashAjaxRequest() {
-    var userSearch = "" // What ever attribute they clicked on will go into the seach for our API Example"seach a park, click on park, image is random generated with that parks image"
-    var parksUrl =
-      "https://api.unsplash.com/photos/random/?client_id=de60a94209a9bef884f3a7ad3716dcb45770113151dea2b8e5aa7acc131efc54&query=" + userSearch; //<---here is where our users search generates image related from API
+    var unsplashURL =
+      "https://api.unsplash.com/photos/random/?client_id=de60a94209a9bef884f3a7ad3716dcb45770113151dea2b8e5aa7acc131efc54&query=" + unsplashSearch; //<---here is where our users search generates image related from API
     $.ajax({
       method: "GET",
-      url: parksUrl
+      url: unsplashURL
     }).then(unsplashAPICall);
   }
 
@@ -43,12 +43,7 @@ $(document).ready(function () {
     imageResponse = imgResponse;
     console.log(imageResponse);
   }
-  // For state requests
-  function bothAjaxRequests() {
-    unsplashAjaxRequest;
-    NPSAjaxRequest;
-  }
-  $("#stateButton").on("click", bothAjaxRequests)
+
   //National Park API is below
 
   function NPSAjaxRequest() {
@@ -66,44 +61,15 @@ $(document).ready(function () {
     stateCardGenerator(response);
     // modelGenerator(response)
   }
-  function stateCardGenerator(response) {
-    parkInfo = response;
-    console.log(parkInfo);
 
-    // Generating all park names and designations in the state
-    var numParks = parkInfo.data.length
-    console.log(numParks)
-    var stateContainer = $("<container id='stateCardContainer'>")
-    for (i = 0; i < numParks; i++) {
-      var parkName = parkInfo.data[i].fullName;
-      userSearch = parkName;
-      var parkDesignation = parkInfo.data[i].designation;
-      // Image from Unsplash
-      var parkImage = imageResponse.urls.full;
-      console.log(parkName);
-      console.log(parkDesignation);
-
-      // State Cards Generator
-      // Create new div to hold the card
-      var stateParkCard = $("<div>")
-      // Append card elements 
-      stateParkCard.addClass("card")
-      stateParkCard.attr("style", "width: 18rem;");
-      var stateImage = $("<img>").attr({ src: parkImage, class: "card-img-top", alt: "..." })
-      stateParkCard.append(stateImage)
-      var stateParkCardBody = $("<div class='card-body'>")
-      stateParkCard.append(stateParkCardBody)
-      var stateParkCardHeader = $("<h5 class='card-title'>")
-      stateParkCardHeader.text(parkName)
-      stateParkCard.append(stateParkCardHeader);
-      var stateParkCardP = $("<p class ='card-text'>");
-      stateParkCardP.text(parkDesignation);
-      stateParkCard.append(stateParkCardP);
-      stateContainer.append(stateParkCard);
-      stateContainer.appendTo($("#card"));
-    }
-    console.log(parkInfo)
+  // For state requests
+  function bothAjaxRequests() {
+    unsplashAjaxRequest();
+    NPSAjaxRequest();
   }
+  $("#stateButton").on("click", bothAjaxRequests);
+
+
 
   // HOME PAGE====================================================================================================
   // "take me home" button says take me home
