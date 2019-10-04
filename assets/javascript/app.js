@@ -22,7 +22,7 @@ function imageScroller() {
       console.log(index);
     }
   }, 4000);
-}
+};
 
 
 imageScroller();
@@ -40,7 +40,11 @@ $("#searchButton").click(function () {
 //Unsplash API Below: We are working on having the Unsplash API information incorporate photo based on image and location.
 function unsplashAjaxRequest() {
   var unsplashURL =
+<<<<<<< Updated upstream
   "https://api.unsplash.com/photos/random/?client_id=b9429332b4931ea777d5218c2dd0c972e59aa521cdd7693c57ae030db53d17ef&query=" + unsplashSearch; //<---here is where our users search generates image related from API
+=======
+    "https://api.unsplash.com/photos/random/?client_id=b9429332b4931ea777d5218c2dd0c972e59aa521cdd7693c57ae030db53d17ef&query=" + unsplashSearch; //<---here is where our users search generates image related from API
+>>>>>>> Stashed changes
   $.ajax({
     method: "GET",
     url: unsplashURL
@@ -86,7 +90,7 @@ $("#stateButton").on("click", bothAjaxRequests);
 // HOME PAGE====================================================================================================
 // "take me home" button says take me home
 $("#takeMeHome").on("click", function () {
-  //console.log(alert("this button works!"));
+  // console.log(alert("this button works!"));
 
 })
   // LINDSAY: ON STATE PAGE ======================================================================================
