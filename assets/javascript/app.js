@@ -40,7 +40,7 @@ $("#searchButton").click(function () {
 //Unsplash API Below: We are working on having the Unsplash API information incorporate photo based on image and location.
 function unsplashAjaxRequest() {
   var unsplashURL =
-    "https://api.unsplash.com/photos/random/?client_id=de60a94209a9bef884f3a7ad3716dcb45770113151dea2b8e5aa7acc131efc54&query=" + unsplashSearch; //<---here is where our users search generates image related from API
+  "https://api.unsplash.com/photos/random/?client_id=b9429332b4931ea777d5218c2dd0c972e59aa521cdd7693c57ae030db53d17ef&query=" + unsplashSearch; //<---here is where our users search generates image related from API
   $.ajax({
     method: "GET",
     url: unsplashURL
@@ -71,7 +71,10 @@ function NPSAPICall(response) {
 }
 
 // For state requests
-function bothAjaxRequests() {
+function bothAjaxRequests(event) {
+event.preventDefault();
+
+
   unsplashAjaxRequest();
   NPSAjaxRequest();
 }
