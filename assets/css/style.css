@@ -44,18 +44,23 @@ nav {
 }
 
 
-  footer {
-    padding: 30px 0;
+footer {
     clear: both;
     font-size: 12px;
     color: #ffffff;
     color: rgb(99, 85, 128);
-    text-align: center;
     background: whitesmoke;
     border-top: 4px solid rgb(99, 85, 128);
-    height: 50px;
-    opacity: .8;
-  }
+    opacity: 0.8;
+    margin-top: 115px;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+   }
 
   #bg {
     position: fixed;
