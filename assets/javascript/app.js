@@ -4,29 +4,35 @@ var imageResponse;
 var stateSelected = "TX";
 var unsplashSearch = "";
 
-//Start Function===============================================================================================
-$(document).ready(function () {
-  function imageScroller() {
-    var images = ["assets/images/bg2.jpeg", "assets/images/fallroad.jpg"];
-    var index = 0;
-    $("#bg").attr("src", images[index]);
-
-    setInterval(function () {
-      if (index === images.length - 1) {
-        index = 0;
+$(document).ready(function(){
+    function imageScroller() {
+        var images = ["assets/images/bg2.jpeg", "assets/images/fallroad.jpg", "assets/images/bryce2.jpeg", "assets/images/tetons.jpeg", "assets/images/beardunes.jpeg","assets/images/antelope.jpeg", "assets/images/bison.jpeg", "assets/images/rocky.jpeg", "assets/images/bear.jpeg","assets/images/bryce.jpeg", "assets/images/fjords.jpeg", "assets/images/geyser.jpeg", "assets/images/joshua.jpeg", "assets/images/glacier.jpeg", "assets/images/moose.jpeg", "assets/images/redwoods.jpeg", "assets/images/northrim.jpeg","assets/images/silent.jpeg", "assets/images/whitesands.jpeg", "assets/images/spring.jpeg", "assets/images/yosemite.jpeg", "assets/images/ysfalls.jpeg", "assets/images/zion.jpeg"];
+        var index = 0;
         $("#bg").attr("src", images[index]);
-        console.log(index);
-      } else {
-        index++;
-        $("#bg").attr("src", images[index]);
-        console.log(index);
+    
+        setInterval(function() {
+          if (index === images.length - 1) {
+            index = 0;
+            $("#bg").attr("src", images[index]);
+            console.log(index);
+          } else {
+            index++;
+            $("#bg").attr("src", images[index]);
+            console.log(index);
+          }
+        }, 4000);
       }
     }, 2000);
   }
   imageScroller();
 
+$("#searchButton").click(function() {
+    event.preventDefault();
+    $("#searchBar").toggle();
+    $("#searchButton").toggle();
 
-  // API
+});
+// API
 
   //Images fixed and working AJAX
   //Unsplash API Below: We are working on having the Unsplash API information incorporate photo based on image and location.
@@ -68,6 +74,7 @@ $(document).ready(function () {
     NPSAjaxRequest();
   }
   $("#stateButton").on("click", bothAjaxRequests);
+
 
 
 
