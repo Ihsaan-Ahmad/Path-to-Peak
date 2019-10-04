@@ -20,7 +20,7 @@ $(document).ready(function(){
             $("#bg").attr("src", images[index]);
             console.log(index);
           }
-        }, 4000);
+        }, 5000);
       }
     }, 2000);
   }
