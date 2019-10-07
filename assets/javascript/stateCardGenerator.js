@@ -7,9 +7,6 @@ function stateCardGenerator(response) {
 
 
 
-
-
-
     parkInfo = response;
     // console.log(parkInfo);
     // Generating all park names and designations in the state
@@ -20,6 +17,7 @@ function stateCardGenerator(response) {
         var parkName = parkInfo.data[i].fullName;
         unsplashSearch = parkName;
         var parkDesignation = parkInfo.data[i].designation;
+        var parkCode = parkInfo.data[i].parkCode;
         // Image from Unsplash
         var parkImage = imageResponse.urls.full;
         // console.log(parkName);
@@ -30,7 +28,7 @@ function stateCardGenerator(response) {
         var stateParkCard = $("<div>")
         // Append card elements 
         stateParkCard.addClass("card card-body")
-        stateParkCard.attr({ "data-toggle": "modal", "data-target": "#exampleModalCenter", "data-value": parkName });
+        stateParkCard.attr({ "data-toggle": "modal", "data-target": "#exampleModalCenter", "data-value": parkCode });
         var stateImage = $("<img>").attr({ src: parkImage, class: "card-img-top", alt: "..." })
         stateParkCard.append(stateImage)
         // var stateParkCardBody = $("<div class='card-body'>")
