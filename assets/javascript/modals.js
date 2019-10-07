@@ -2,6 +2,9 @@ $(document).on("click", ".card-body", function () {
     $(".modal-body").empty();
     $(".modal-title").empty();
 
+
+
+
     // GRAB VALUE OF CARD
     var modalParkSelected = $(this).attr("data-value");
     var modalInfo = parkInfo.data.filter(item => item.parkCode === modalParkSelected)[0];
@@ -17,12 +20,24 @@ $(document).on("click", ".card-body", function () {
         console.log(modalInfo);
     }
 
+
     // Place info into modal
     var modalTitle = $(".modal-title")
     modalTitle.append(modalInfo.name + " " + modalInfo.designation);
     var modalBody = $(".modal-body");
+    var modalCounty = $("<p>");
+    modalCounty.text(county);
+    console.log("MODAL COUNTY: " + county); //Working second API
+    modalBody.append(modalCounty);
+
     modalBody.append(modalInfo.description);
     var modalP = $("<p>");
     modalP.append("<a href='" + modalInfo.url + "' target=_blank>" + modalInfo.url + "</a>");
     modalBody.append(modalP);
+    modalDirections = $("<p>");
+    modalDirections.append("Get directions to " + modalInfo.name + " " + modalInfo.designation + ": " + "<a href='" + modalInfo.directionsUrl + "' target=_blank>" + modalInfo.directionsUrl + "</a>");
+    modalBody.append(modalDirections);
+
 })
+
+

@@ -52,6 +52,7 @@ var stateSelected = "";
 var unsplashSearch = "";
 var region;
 var beerResponse = "";
+var county;
 
 //Images fixed and working AJAX
 //Unsplash API Below: We are working on having the Unsplash API information incorporate photo based on image and location.
@@ -138,9 +139,31 @@ function locationAPICall(locationResponse) {
   console.log(geoResponse);
   console.log("this console log ran");
   var city = (geoResponse.results[0].components.city);
+  county = (geoResponse.results[0].components.county);
   console.log("City: " + city);
+  console.log("county: " + county)
 
 }
+
+
+// Zomato 
+function zomato() {
+  var zomatoUrl =
+    "https://developers.zomato.com/api/v2.1/geocode?lat=38.24555783&lon=-109.8801624"
+  $.ajax({
+    method: "GET",
+    url: zomatoUrl
+  }).then(zomatoAPICall);
+}
+
+function zomatoAPICall(zomatoResponse) {
+  geoResponse = zomatoResponse
+  console.log(zomatoResponse);
+  console.log("this console log ran");
+}
+zomato();
+
+
 
 // HOME PAGE====================================================================================================
 // "take me home" button says take me home
