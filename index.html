@@ -20,9 +20,9 @@
     <img src="" id="bg">
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <h1><i class="fas fa-map-signs"></i> Path to Peak <i class="fas fa-mountain"></i></h1>
+            <h1><i class="fas fa-map-signs"></i> PATH TO PEAK <i class="fas fa-mountain"></i></h1>
         </a>
-        <button type="button" class="btn btn-outline-secondary" id="takeMeHome">Take Me Home</button>
+        <button type="button" class="btn btn-outline-secondary" id="takeMeHome">TAKE ME HOME</button>
 
     </nav>
 
@@ -31,14 +31,16 @@
     <div class="main-container container mx-auto">
         <div>
             <!-- In the main container we will start with the leafLet Map showing all the tooltips for the National Parks -->
-            <h2 class="npfont" id="putItIn"><i class="fas fa-compass"></i> Parks Near Me <i class="fas fa-tree"></i>
+            <h2 class="npfont" id="putItIn"><i class="fas fa-compass"></i> NATIONAL PARKS NEAR ME <i class="fas fa-tree"></i>
             </h2>
             <div>
-                <div>
+                <div class="spotify">
                     <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX5Q5wA1hY6bS"
                         width="300" height="80" frameborder="0" allowtransparency="true"
                         allow="encrypted-media"></iframe>
-                    <h3 id="fillMe">Type In The State Name You Would Like To Search!</h3>
+                </div>
+                <div class="typeState">
+                    <h3 id="fillMe">TYPE IN THE STATE YOU WOULD LIKE TO SEARCH</h3>
                 </div>
             </div>
             <!-- The user will put a state in and on click the container will change the map into cards with all the parks in that state-->
@@ -46,12 +48,12 @@
             <!-- <form class="form"> -->
                 <div id="searchBar">
                     <input class="form-control mr-sm-2 animated fadeIn" id="state-entered" type="search"
-                        placeholder="Ex. 'Texas'" aria-label="Search">
+                        placeholder="'Texas' or 'TX'" aria-label="Search">
                         <i class="fas fa-search fa-2x stateBtnClass animated fadeIn" id="stateButton"></i>
 
             </div>
             <button class="btn btn-outline-secondary my-2 my-sm-0" id="searchButton" type="submit"><i
-                    class="fas fa-search"></i> Search My State</button>
+                    class="fas fa-search"></i> SEARCH MY STATE</button>
             <!-- </form> -->
         </div>
         <div class="cardsGoHere"></div>
@@ -88,9 +90,10 @@
     <footer>
         <div class="container">
             <!-- Copyright &copy; -->
-            <a href="https://twitter.com/NatlParkService?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" class="fab fa-twitter-square fa-3x"></a> 
-            <a href="https://www.facebook.com/nationalparkservice" target="_blank" class="fab fa-facebook-square fa-3x"></a>
-            <a href="https://www.instagram.com/nationalparkservice/?hl=en" target="_blank" class="fab fa-instagram fa-3x"></a>
+            <p id="npsInfo">LEARN MORE ABOUT NPS</p>
+            <a href="https://twitter.com/NatlParkService?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" class="fab fa-twitter-square fa-2x"></a> 
+            <a href="https://www.facebook.com/nationalparkservice" target="_blank" class="fab fa-facebook-square fa-2x"></a>
+            <a href="https://www.instagram.com/nationalparkservice/?hl=en" target="_blank" class="fab fa-instagram fa-2x"></a>
         </div>
     </footer>
     <!-- Optional JavaScript -->
