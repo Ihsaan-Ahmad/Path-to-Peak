@@ -7,7 +7,7 @@ function stateCardGenerator(response) {
     var stateContainer = $(".cardsGoHere");
     for (i = 0; i < numParks; i++) {
         var parkName = parkInfo.data[i].fullName;
-        userSearch = parkName;
+        unsplashSearch = parkName;
         var parkDesignation = parkInfo.data[i].designation;
         // Image from Unsplash
         var parkImage = imageResponse.urls.full;
@@ -19,6 +19,7 @@ function stateCardGenerator(response) {
         var stateParkCard = $("<div>")
         // Append card elements 
         stateParkCard.addClass("card card-body")
+        stateParkCard.attr({ "data-toggle": "modal", "data-target": "#exampleModalCenter", "data-value": parkName });
         var stateImage = $("<img>").attr({ src: parkImage, class: "card-img-top", alt: "..." })
         stateParkCard.append(stateImage)
         // var stateParkCardBody = $("<div class='card-body'>")
@@ -30,22 +31,15 @@ function stateCardGenerator(response) {
         stateParkCardP.text(parkDesignation);
         stateParkCard.append(stateParkCardP);
         stateContainer.append(stateParkCard);
-        var stateParkButton = $("<button>TELL ME MORE</button>");
-        stateParkButton.attr('data-toggle', 'modal');
-        stateParkButton.attr('data-target', 'exampleModalCenter');
-        stateParkButton.attr('type', 'button');
-        stateParkButton.attr('id', 'showModal');
-        stateParkCard.append(stateParkButton);
-
     }
     console.log(parkInfo)
-    
+
 
 
 
 };
-$('#showModal').on('click', function(ev) {
-        jQuery.noConflict();
-        console.log(ev);
-        $('#showModal').modal('show');
-        });
+$('#showModal').on('click', function (ev) {
+    jQuery.noConflict();
+    console.log(ev);
+    $('#showModal').modal('show');
+});
