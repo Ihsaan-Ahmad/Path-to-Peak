@@ -1,14 +1,7 @@
 function stateCardGenerator(response) {
 
 
-    // Prevent the form from refreshing the page
-    // event.preventDefault();
-    // This line grabs the input from the textbox
-    var state = $(".form-control").val().trim();
-    console.log("STATE: " + state);
-    var stateAcronym = abbrState(state, 'abbr')
-    stateSelected = stateAcronym;
-    console.log("ACRONYM: " + stateAcronym);
+
     // Unsplash search depends on how we are able to get images to load
 
 
