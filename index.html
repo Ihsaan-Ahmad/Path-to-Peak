@@ -13,15 +13,17 @@
     <link rel="stylesheet" text="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script> -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
 </head>
 
 <body>
     <img src="" id="bg">
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#"><h1><i class="fas fa-map-signs"></i> Path to Peak <i class="fas fa-mountain"></i></h1></a>
+        <a class="navbar-brand" href="#">
+            <h1><i class="fas fa-map-signs"></i> Path to Peak <i class="fas fa-mountain"></i></h1>
+        </a>
         <button type="button" class="btn btn-outline-secondary" id="takeMeHome">Take Me Home</button>
         <!-- <form class="form-inline"> -->
         <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
@@ -33,65 +35,71 @@
 
     <div class="main-container container mx-auto">
         <div>
-      <!-- In the main container we will start with the leafLet Map showing all the tooltips for the National Parks -->
-        <h2 class="npfont" id="putItIn"><i class="fas fa-compass"></i> PUT SOMETHING IN ME <i class="fas fa-tree"></i></h2>
-         <div>
-             <div>
-                    <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX5Q5wA1hY6bS" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                 <h3 id="fillMe">Fill me!</h3>
-             </div>
-         </div>
-        <!-- The user will put a state in and on click the container will change the map into cards with all the parks in that state-->
-        <!-- on click of the card a modal will pop up with all the info -->
-         <form class="form">
-             <div id="searchBar">
-                 <input class="form-control mr-sm-2 animated fadeIn" id="state-entered" type="search" placeholder="Search" aria-label="Search" >
-                 <button class="stateBtnClass animated fadeIn" id="stateButton"><i class="fas fa-search"></i></button>
+            <!-- In the main container we will start with the leafLet Map showing all the tooltips for the National Parks -->
+            <h2 class="npfont" id="putItIn"><i class="fas fa-compass"></i> PUT SOMETHING IN ME <i
+                    class="fas fa-tree"></i></h2>
+            <div>
+                <div>
+                    <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX5Q5wA1hY6bS"
+                        width="300" height="80" frameborder="0" allowtransparency="true"
+                        allow="encrypted-media"></iframe>
+                    <h3 id="fillMe">Fill me!</h3>
+                </div>
+            </div>
+            <!-- The user will put a state in and on click the container will change the map into cards with all the parks in that state-->
+            <!-- on click of the card a modal will pop up with all the info -->
+            <form class="form">
+                <div id="searchBar">
+                    <input class="form-control mr-sm-2 animated fadeIn" id="state-entered" type="search"
+                        placeholder="Search" aria-label="Search">
+                    <button class="stateBtnClass animated fadeIn" id="stateButton"><i
+                            class="fas fa-search"></i></button>
 
-             </div>
-            <button class="btn btn-outline-secondary my-2 my-sm-0" id="searchButton" type="submit"><i class="fas fa-search"></i> Search My State</button>
-        </form>
-    </div>
-    <div class="cardsGoHere"></div>
+                </div>
+                <button class="btn btn-outline-secondary my-2 my-sm-0" id="searchButton" type="submit"><i
+                        class="fas fa-search"></i> Search My State</button>
+            </form>
+        </div>
+        <div class="cardsGoHere"></div>
     </div>
 
-    <div class="container" >
+    <div class="container">
         <div class="row" id="card"></div>
     </div>
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-            Launch demo modal
-          </button> -->
-          <!-- <button class="trigger">Click here to trigger the modal!</button> -->
-          <!-- <div class="modal">
-              <div class="modal-content">
-                  <span class="close-button">&times;</span>
-                  <h1>Hello, I am a modal!</h1>
-              </div>
-          </div> -->
-           <!-- This is the div from bootstrap -->
-          <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
+                <img src="assets/images/tetons.jpeg" class="card-img-top">
                 <div class="modal-body">
-                  ...
+                    ...
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
-              </div>
             </div>
-          </div>   -->
+        </div>
+    </div>
+
 
     <footer>
-        <div class="container" >
+        <div class="container">
             <!-- Copyright &copy; -->
-            <a href="https://twitter.com/NatlParkService?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" class="fab fa-twitter-square fa-3x"></a> <a href="https://www.facebook.com/nationalparkservice" target="_blank" class="fab fa-facebook-square fa-3x"></a> <a href="https://www.instagram.com/nationalparkservice/?hl=en" target="_blank" class="fab fa-instagram fa-3x"></a>
+            <a href="https://twitter.com/NatlParkService?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                target="_blank" class="fab fa-twitter-square fa-3x"></a> <a
+                href="https://www.facebook.com/nationalparkservice" target="_blank"
+                class="fab fa-facebook-square fa-3x"></a> <a href="https://www.instagram.com/nationalparkservice/?hl=en"
+                target="_blank" class="fab fa-instagram fa-3x"></a>
         </div>
     </footer>
     <!-- Optional JavaScript -->
