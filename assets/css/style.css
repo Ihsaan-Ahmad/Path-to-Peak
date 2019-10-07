@@ -24,15 +24,6 @@ nav {
   opacity: 0.8;
 }
 
-/* nav a {
-    display: inline-block;
-    padding-left: 15px;
-    margin-left: 15px;
-    line-height: 18px;
-    color: rgb(15, 63, 39);
-    text-decoration: none;
-  } */
-
 #searchBar {
   display: none;
 }
@@ -40,7 +31,7 @@ nav {
   padding: 20px;
   margin: 20px;
   background-color: whitesmoke;
-  opacity: 0.8;
+  opacity: .8;
   text-align: center;
   border: 4px solid rgb(15, 63, 39);
 }
@@ -121,3 +112,11 @@ input {
     display: none;
 }
 
+.form-control:focus {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 5px rgb(15, 63, 39)}
+
+  /* media queries{
+  bg- max-width:none:
+  .main-container margin bottom 100px;} */

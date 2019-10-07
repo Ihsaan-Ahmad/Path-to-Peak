@@ -25,10 +25,7 @@
             <h1><i class="fas fa-map-signs"></i> Path to Peak <i class="fas fa-mountain"></i></h1>
         </a>
         <button type="button" class="btn btn-outline-secondary" id="takeMeHome">Take Me Home</button>
-        <!-- <form class="form-inline"> -->
-        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Take Me Home</button> -->
-        <!-- </form> -->
+
     </nav>
 
     <!-- Navbar-->
@@ -36,19 +33,19 @@
     <div class="main-container container mx-auto">
         <div>
             <!-- In the main container we will start with the leafLet Map showing all the tooltips for the National Parks -->
-            <h2 class="npfont" id="putItIn"><i class="fas fa-compass"></i> PUT SOMETHING IN ME <i
+            <h2 class="npfont" id="putItIn"><i class="fas fa-compass"></i> Parks Near Me <i
                     class="fas fa-tree"></i></h2>
             <div>
                 <div>
                     <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX5Q5wA1hY6bS"
                         width="300" height="80" frameborder="0" allowtransparency="true"
                         allow="encrypted-media"></iframe>
-                    <h3 id="fillMe">Fill me!</h3>
+                    <h3 id="fillMe">Type In The State Name You Would Like To Search!</h3>
                 </div>
             </div>
             <!-- The user will put a state in and on click the container will change the map into cards with all the parks in that state-->
             <!-- on click of the card a modal will pop up with all the info -->
-            <form class="form">
+            <!-- <form class="form"> -->
                 <div id="searchBar">
                     <input class="form-control mr-sm-2 animated fadeIn" id="state-entered" type="search"
                         placeholder="Search" aria-label="Search">
@@ -58,7 +55,7 @@
                 </div>
                 <button class="btn btn-outline-secondary my-2 my-sm-0" id="searchButton" type="submit"><i
                         class="fas fa-search"></i> Search My State</button>
-            </form>
+            <!-- </form> -->
         </div>
         <div class="cardsGoHere"></div>
     </div>
@@ -75,14 +72,14 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Should be pulled from NPS</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <img src="assets/images/tetons.jpeg" class="card-img-top">
                 <div class="modal-body">
-                    ...
+                    Should be pulled from NPS
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
