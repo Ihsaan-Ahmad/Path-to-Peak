@@ -80,7 +80,7 @@ function NPSAjaxRequest() {
 }
 
 function NPSAPICall(response) {
-  console.log(response);
+  // console.log(response);
   stateCardGenerator(response);
   // modelGenerator(response)
 }

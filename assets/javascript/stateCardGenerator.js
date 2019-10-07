@@ -1,6 +1,24 @@
 function stateCardGenerator(response) {
+
+
+    // Prevent the form from refreshing the page
+    // event.preventDefault();
+    // This line grabs the input from the textbox
+    var state = $(".form-control").val().trim();
+    console.log("STATE: " + state);
+    var stateAcronym = abbrState(state, 'abbr')
+    stateSelected = stateAcronym;
+    console.log("ACRONYM: " + stateAcronym);
+    // Unsplash search depends on how we are able to get images to load
+
+
+
+
+
+
+
     parkInfo = response;
-    console.log(parkInfo);
+    // console.log(parkInfo);
     // Generating all park names and designations in the state
     var numParks = parkInfo.data.length
     console.log(numParks)
@@ -11,8 +29,8 @@ function stateCardGenerator(response) {
         var parkDesignation = parkInfo.data[i].designation;
         // Image from Unsplash
         var parkImage = imageResponse.urls.full;
-        console.log(parkName);
-        console.log(parkDesignation);
+        // console.log(parkName);
+        // console.log(parkDesignation);
 
         // State Cards Generator
         // Create new div to hold the card
