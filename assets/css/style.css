@@ -120,3 +120,7 @@ input {
   /* media queries{
   bg- max-width:none:
   .main-container margin bottom 100px;} */
+  
+.card-body:hover {
+  color: green;
+}

@@ -44,7 +44,7 @@ $("#takeMeHome").on("click", function () {
 */
 var parkInfo;
 var imageResponse;
-var stateSelected = "TX";
+var stateSelected = "";
 var unsplashSearch = "";
 var region;
 var beerResponse = "";
@@ -69,6 +69,19 @@ function unsplashAPICall(imgResponse) {
 
 function NPSAjaxRequest() {
 
+
+  // This line grabs the input from the textbox
+  var state = $(".form-control").val().trim();
+  console.log("STATE: " + state);
+  if (state.length > 2) {
+    var stateAcronym = abbrState(state, 'abbr')
+    stateSelected = stateAcronym;
+    console.log("ACRONYM: " + stateAcronym);
+    console.log(stateSelected)
+  }
+  else {
+    stateSelected = state;
+  }
   var queryURL =
     //Hide our key once ready to push! (12:57pm)
     "https://developer.nps.gov/api/v1/parks?stateCode=" + stateSelected + "&api_key=aYUUJ6WlFhXa4FxFlzz8RR712lrylzDsnov99dCe";
@@ -79,7 +92,7 @@ function NPSAjaxRequest() {
 }
 
 function NPSAPICall(response) {
-  console.log(response);
+  // console.log(response);
   stateCardGenerator(response);
   // modelGenerator(response)
 }
