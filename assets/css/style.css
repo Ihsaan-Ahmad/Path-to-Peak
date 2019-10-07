@@ -30,6 +30,7 @@ nav {
 .main-container {
   padding: 20px;
   margin: 20px;
+  margin-bottom: 80px;
   background-color: whitesmoke;
   opacity: .8;
   text-align: center;
@@ -108,19 +109,24 @@ input {
     border: 2px solid rgb(15, 63, 39);
 }
 
-.modal {
-    display: none;
+#fillMe {
+  display: none;
 }
 
 .form-control:focus {
   outline: none;
   border: none;
-  box-shadow: 0 0 5px rgb(15, 63, 39)}
+  box-shadow: 0 0 5px rgb(15, 63, 39)
+}
 
   /* media queries{
   bg- max-width:none:
   .main-container margin bottom 100px;} */
-  
+
 .card-body:hover {
-  color: green;
+  color: rgb(9, 129, 69);
+}
+
+#stateButton:hover {
+  color: rgb(9, 129, 69);
 }
