@@ -33,7 +33,7 @@ $("#stateButton").click(function () {
 
 $("#takeMeHome").on("click", function () {
   event.preventDefault();
-  
+
   $("#searchBar").hide();
   $("#searchButton").show();
   $("#putItIn").show();
@@ -123,7 +123,24 @@ function bothAjaxRequests(event) {
 }
 $("#stateButton").on("click", bothAjaxRequests);
 
+// Geolocation
+function geolocation() {
+  var locationUrl =
+    "https://api.opencagedata.com/geocode/v1/json?q=-22.6792%2C+14.5272&key=56b3edc6998940e095b41f02d7376b21&pretty=1"
+  $.ajax({
+    method: "GET",
+    url: locationUrl
+  }).then(locationAPICall);
+}
 
+function locationAPICall(locationResponse) {
+  geoResponse = locationResponse
+  console.log(geoResponse);
+  var city = (geoResponse.results[0].components.city);
+  console.log(city);
+
+}
+geolocation()
 // HOME PAGE====================================================================================================
 // "take me home" button says take me home
 

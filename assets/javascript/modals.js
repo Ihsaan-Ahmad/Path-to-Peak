@@ -11,6 +11,6 @@ $(document).on("click", ".card-body", function () {
     var modalBody = $(".modal-body");
     modalBody.append(modalInfo.description);
     var modalP = $("<p>");
-    modalP.append("<a href='" + modalInfo.url + "'>" + modalInfo.url + "</a>");
+    modalP.append("<a href='" + modalInfo.url + "' target=_blank>" + modalInfo.url + "</a>");
     modalBody.append(modalP);
 })
