@@ -146,22 +146,20 @@ function locationAPICall(locationResponse) {
 }
 
 
-// Zomato 
-function zomato() {
-  var zomatoUrl =
-    "https://developers.zomato.com/api/v2.1/geocode?lat=38.24555783&lon=-109.8801624"
+// Trails 
+function trails(latitude, longitude) {
+  var trailsUrl = "https://www.hikingproject.com/data/get-trails?lat=" + latitude + "&lon=" + longitude + "&maxDistance=30&key=200612410-9f382d3dcd1ea30e2507f860ebe7ef29"
   $.ajax({
     method: "GET",
-    url: zomatoUrl
-  }).then(zomatoAPICall);
+    url: trailsUrl
+  }).then(trailsAPICall);
 }
 
-function zomatoAPICall(zomatoResponse) {
-  geoResponse = zomatoResponse
-  console.log(zomatoResponse);
-  console.log("this console log ran");
+function trailsAPICall(trailsResponse) {
+  console.log("TRAILS: " + JSON.stringify(trailsResponse));
+
 }
-zomato();
+
 
 
 

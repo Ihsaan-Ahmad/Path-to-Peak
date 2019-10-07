@@ -18,6 +18,7 @@ $(document).on("click", ".card-body", function () {
         console.log("LAT AND LONG: " + latLong);
         geolocation(latitude, longitude)
         console.log(modalInfo);
+        trails(latitude, longitude);
     }
 
 
