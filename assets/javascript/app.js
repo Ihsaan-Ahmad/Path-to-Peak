@@ -21,7 +21,7 @@ $("#searchButton").click(function () {
   event.preventDefault();
   $("#searchBar").show();
   $("#searchButton").hide();
-
+  $("#fillMe").show();
 });
 
 $("#stateButton").click(function () {
