@@ -26,7 +26,6 @@ $("#searchButton").click(function () {
 
 $("#stateButton").click(function () {
   event.preventDefault();
-  $("#putItIn").hide();
   $("#fillMe").hide();
   $("#searchBar").hide();
   $("#searchButton").hide();

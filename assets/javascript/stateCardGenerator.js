@@ -49,8 +49,3 @@ function stateCardGenerator(response) {
 
 
 };
-$('#showModal').on('click', function (ev) {
-    jQuery.noConflict();
-    console.log(ev);
-    $('#showModal').modal('show');
-});
