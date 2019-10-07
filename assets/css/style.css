@@ -24,13 +24,23 @@ nav {
   opacity: 0.8;
 }
 
+.spotify  {
+  padding-bottom: 10px;
+  margin: 20px;
+  border-bottom: 4px solid rgb(75, 56, 48);
+}
+
+.typeState {
+  margin: 20px;
+}
+
 #searchBar {
   display: none;
 }
 .main-container {
   padding: 20px;
   margin: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 130px;
   background-color: whitesmoke;
   opacity: 0.8;
   text-align: center;
@@ -39,9 +49,9 @@ nav {
 
 footer {
   clear: both;
-  font-size: 12px;
+  font-size: 20px;
   color: #ffffff;
-  color: rgb(99, 85, 128);
+  color: rgb(15, 63, 39);
   background: whitesmoke;
   border-top: 4px solid rgb(75, 56, 48);
   opacity: 0.8;
@@ -68,7 +78,7 @@ footer {
 
 body {
   font-family: "npfont";
-  src: url("./NationalPark-Outline.otf"); 
+  src: url("./NationalPark-Heavy.otf"); 
 }
 
 .cardsGoHere {
@@ -132,10 +142,6 @@ input {
   box-shadow: 0 0 5px rgb(15, 63, 39)
 }
 
-  /* media queries{
-  bg- max-width:none:
-  .main-container margin bottom 100px;} */
-
 .card-body:hover {
   color: rgb(9, 129, 69);
 }
@@ -154,4 +160,19 @@ input {
 
 a:hover {
   color: rgb(75, 56, 48);
+}
+
+#npsInfo {
+  margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  /* For tablets: */
+  #bg {max-width:none};
+
+}
+
+@media only screen and (max-width: 768px) {
+  /* For phones */
+  #bg {max-width:none}
 }
