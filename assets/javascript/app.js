@@ -43,6 +43,7 @@ $("#takeMeHome").on("click", function () {
 /*Global Varibales=============================================================================================
 */
 var parkInfo;
+// var parkCode;
 var imageResponse;
 var stateSelected = "";
 var unsplashSearch = "";
@@ -92,7 +93,7 @@ function NPSAjaxRequest() {
 }
 
 function NPSAPICall(response) {
-  // console.log(response);
+  console.log(response);
   stateCardGenerator(response);
   // modelGenerator(response)
 }
