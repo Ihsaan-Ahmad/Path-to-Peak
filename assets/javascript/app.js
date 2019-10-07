@@ -124,9 +124,9 @@ function bothAjaxRequests(event) {
 $("#stateButton").on("click", bothAjaxRequests);
 
 // Geolocation
-function geolocation() {
+function geolocation(latitude, longitude) {
   var locationUrl =
-    "https://api.opencagedata.com/geocode/v1/json?q=-22.6792%2C+14.5272&key=56b3edc6998940e095b41f02d7376b21&pretty=1"
+    "https://api.opencagedata.com/geocode/v1/json?q=" + latitude + "%2C" + longitude + "&key=56b3edc6998940e095b41f02d7376b21&pretty=1"
   $.ajax({
     method: "GET",
     url: locationUrl
@@ -136,11 +136,12 @@ function geolocation() {
 function locationAPICall(locationResponse) {
   geoResponse = locationResponse
   console.log(geoResponse);
+  console.log("this console log ran");
   var city = (geoResponse.results[0].components.city);
-  console.log(city);
+  console.log("City: " + city);
 
 }
-geolocation()
+
 // HOME PAGE====================================================================================================
 // "take me home" button says take me home
 

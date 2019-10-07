@@ -5,6 +5,12 @@ $(document).on("click", ".card-body", function () {
     // GRAB VALUE OF CARD
     var modalParkSelected = $(this).attr("data-value");
     var modalInfo = parkInfo.data.filter(item => item.parkCode === modalParkSelected)[0];
+    var latLong = modalInfo.latLong
+    console.log("LAT LONG: " + latLong);
+    latitude = modalInfo.latLong.split(",")[0].split(":")[1].trim();
+    longitude = modalInfo.latLong.split(",")[1].split(":")[1].trim();
+    console.log("LAT AND LONG: " + latLong);
+    geolocation(latitude, longitude)
     console.log(modalInfo);
     var modalTitle = $(".modal-title")
     modalTitle.append(modalInfo.name + " " + modalInfo.designation);
