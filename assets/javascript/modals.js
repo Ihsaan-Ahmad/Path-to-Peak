@@ -7,13 +7,10 @@ $(document).on("click", ".card-body", function () {
     var modalInfo = parkInfo.data.filter(item => item.parkCode === modalParkSelected)[0];
     console.log(modalInfo);
     var modalTitle = $(".modal-title")
-    modalTitle.append(modalInfo.name);
-    modalTitleDesignation = $("<p>");
-    modalTitleDesignation.append(modalInfo.designation);
-    modalTitle.append(modalTitleDesignation);
+    modalTitle.append(modalInfo.name + " " + modalInfo.designation);
     var modalBody = $(".modal-body");
     modalBody.append(modalInfo.description);
     var modalP = $("<p>");
-    modalP.append(modalInfo.url);
+    modalP.append("<a href='" + modalInfo.url + "'>" + modalInfo.url + "</a>");
     modalBody.append(modalP);
 })
