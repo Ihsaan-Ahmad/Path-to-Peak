@@ -29,7 +29,7 @@ function stateCardGenerator(response) {
         stateParkCard.addClass("card card-body")
         stateParkCard.attr({ "data-toggle": "modal", "data-target": "#exampleModalCenter", "data-value": parkCode });
         // var stateParkCardBody = $("<div class='card-body'>")
-        var stateImage = $("<img>").attr({ src: "../images/NPS-sign1.png", class: "card-img-top", alt: "..." })
+        var stateImage = $("<img>").attr({ src: "../images/NPS-sign1.png", class: "card-img-top", id: "stateCardImage", alt: "..." })
         stateParkCard.append(stateImage)
         // stateParkCard.append(stateParkCardBody)
         var stateParkCardHeader = $("<h5 class='card-title'>")

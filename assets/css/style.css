@@ -155,3 +155,12 @@ input {
 a:hover {
   color: rgb(75, 56, 48);
 }
+
+#stateCardImage {
+  max-height: 250px;
+}
+
+#modalImage {
+  max-height: 400px;
+  object-fit: scale-down;
+}
