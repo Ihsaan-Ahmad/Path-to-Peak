@@ -38,6 +38,8 @@ $(document).on("click", ".card-body", function () {
     modalDirections = $("<p>");
     modalDirections.append("Get directions to " + modalInfo.name + " " + modalInfo.designation + ": " + "<a href='" + modalInfo.directionsUrl + "' target=_blank>" + modalInfo.directionsUrl + "</a>");
     modalBody.append(modalDirections);
+    console.log("Trail image: " + trailImage);
+    $(".card-img-top").attr("src", trailImage);
 
 })
 

@@ -53,6 +53,7 @@ var unsplashSearch = "";
 var region;
 var beerResponse = "";
 var county;
+var trailImage;
 
 //Images fixed and working AJAX
 //Unsplash API Below: We are working on having the Unsplash API information incorporate photo based on image and location.
@@ -99,22 +100,8 @@ function NPSAjaxRequest() {
 function NPSAPICall(response) {
   console.log(response);
   stateCardGenerator(response);
-  // modelGenerator(response)
 }
-// For state requests
-// function beerAPI() {
-//     var beerURL ="https://sandbox-api.brewerydb.com/v2/" + region + "/?key=32a1127f99142177f29bc67c78a8a6d6"
-//     // "https://api.unsplash.com/photos/random/?client_id=b9429332b4931ea777d5218c2dd0c972e59aa521cdd7693c57ae030db53d17ef&query=" + region; //<---here is where our users search generates image related from API
-//     $.ajax({
-//       method: "GET: /brewery/:breweryId/locations",
-//       url: beerURL
-//     }).then(beerAPI);
-//   }
-//   function beerAPICall(beerdbResponse) {
-//     console.log(beerResponse);
-//     beerResponse = beerdbResponse;
 
-//   };
 
 function bothAjaxRequests(event) {
   event.preventDefault();
@@ -156,8 +143,13 @@ function trails(latitude, longitude) {
 }
 
 function trailsAPICall(trailsResponse) {
-  console.log("TRAILS: " + JSON.stringify(trailsResponse));
-
+  // console.log("TRAILS: " + JSON.stringify(trailsResponse.trails));
+  trailImage = JSON.stringify(trailsResponse.trails[0].imgMedium);
+  for (var i = 0; i < trailsResponse.trails.length; i++) {
+    console.log("TRAILS: " + JSON.stringify(trailsResponse.trails[i].name));
+    console.log("TRAILS: " + JSON.stringify(trailsResponse.trails[i].url));
+    console.log("TRAILS: " + JSON.stringify(trailsResponse.trails[i].imgMedium));
+  }
 }
 
 
