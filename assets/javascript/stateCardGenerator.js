@@ -18,7 +18,9 @@ function stateCardGenerator(response) {
         stateParkCard.addClass("card card-body")
         stateParkCard.attr({ "data-toggle": "modal", "data-target": "#exampleModalCenter", "data-value": parkCode });
         // var stateParkCardBody = $("<div class='card-body'>")
-        var stateImage = $("<img>").attr({ src: "assets/images/NPS-sign1.png", class: "card-img-top", id: "stateCardImage", alt: "..." })
+        var stateImage = $("<img>").attr({
+            src: "assets/images/NPS-sign1.png", class: "card-img-top", id: "stateCardImage", alt: "..."
+        });
         stateParkCard.append(stateImage)
         // stateParkCard.append(stateParkCardBody)
         var stateParkCardHeader = $("<h5 class='card-title'>")
@@ -48,10 +50,19 @@ function stateCardGenerator(response) {
 
 
 function populateImage(trailsResponse) {
-    $(this.element).attr("src", trailsResponse.trails[0].imgMedium);
+
+    if (trailsResponse.trails[0] !== undefined && trailsResponse.trails[0].imgMedium !== "") {
+
+        $(this.element).attr("src", trailsResponse.trails[0].imgMedium);
+    }
+    else {
+        $(this).attr("src", 'assets/images/NPS-sign1.png');
+
+    }
 
     console.log("trailsresponse per card:");
     console.log(trailsResponse);
 
 
 }
+
