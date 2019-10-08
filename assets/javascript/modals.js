@@ -21,6 +21,19 @@ $(document).on("click", ".card-body", function () {
         var maxResults = 5;
         var maxDistance = 30;
         trails(latitude, longitude, maxResults, maxDistance, populateModal);
+
+        // MapQuest
+        var mapImg;
+        // var latLong = parkInfo.data[i].latLong;
+        var splitLatLong = latLong.split(":");
+        var lat = splitLatLong[1].split(",");
+        var long = splitLatLong[2];
+        var newLatLong = lat[0] + "," + long;
+        var mapQuestURL =
+            "https://www.mapquestapi.com/staticmap/v5/map?key=z6PBR6qx8lWl8cEdyIAZeugWPfk3nA9V&center=" +
+            newLatLong;
+        console.log(mapQuestURL); //<---here is where our users search generates image related from API
+
     }
 
 
@@ -40,6 +53,9 @@ $(document).on("click", ".card-body", function () {
     modalDirections = $("<p>");
     modalDirections.append("Get directions to " + modalInfo.name + " " + modalInfo.designation + ": " + "<a href='" + modalInfo.directionsUrl + "' target=_blank>" + modalInfo.directionsUrl + "</a>");
     modalBody.append(modalDirections);
+    var trailHeader = $(" <br><br><h5>")
+    trailHeader.text("Nearby Trails")
+    trailHeader.appendTo($(".modal-body"))
 
 })
 
@@ -55,9 +71,22 @@ function populateModal(trailsResponse) {
 
 
     for (var i = 0; i < trailsResponse.trails.length; i++) {
-        console.log("TRAILS: " + trailsResponse.trails[i].name);
-        console.log("TRAILS: " + trailsResponse.trails[i].url);
-        console.log("TRAILS: " + trailsResponse.trails[i].imgMedium);
+        // console.log("TRAILS: " + trailsResponse.trails[i].name);
+
+
+        // var trailName = $("<p id='trailName'>")
+        // trailName.text(trailsResponse.trails[i].name);
+        // console.log("TRAILS: " + trailsResponse.trails[i].url);
+        var trailInfo = $("<p>")
+        trailInfo.append(trailsResponse.trails[i].name + "<br>");
+        trailInfo.append("Distance: " + trailsResponse.trails[i].length + " miles" + "<br>");
+        trailInfo.append("More information: <a href='" + trailsResponse.trails[i].url + "' target=_blank>" + trailsResponse.trails[i].url + "</a>");
+        // console.log("TRAILS: " + trailsResponse.trails[i].imgMedium);
+        trailInfo.append("<br>")
+
+
+        // trailName.appendTo($(".modal-body"));
+        trailInfo.appendTo($(".modal-body"));
     }
 
 }
