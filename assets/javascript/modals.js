@@ -18,7 +18,7 @@ $(document).on("click", ".card-body", function () {
         console.log("LAT AND LONG: " + latLong);
         geolocation(latitude, longitude)
         console.log(modalInfo);
-        trails(latitude, longitude);
+        trails(latitude, longitude, populateModal);
     }
 
 
@@ -38,9 +38,24 @@ $(document).on("click", ".card-body", function () {
     modalDirections = $("<p>");
     modalDirections.append("Get directions to " + modalInfo.name + " " + modalInfo.designation + ": " + "<a href='" + modalInfo.directionsUrl + "' target=_blank>" + modalInfo.directionsUrl + "</a>");
     modalBody.append(modalDirections);
-    console.log("Trail image: " + trailImage);
-    $(".card-img-top").attr("src", trailImage);
 
 })
+
+
+
+function populateModal(trailsResponse) {
+
+    // console.log("TRAILS: " + JSON.stringify(trailsResponse.trails));
+
+
+    trailImage = trailsResponse.trails[0].imgMedium;
+    $("#modalImage").attr("src", trailImage);
+    for (var i = 0; i < trailsResponse.trails.length; i++) {
+        console.log("TRAILS: " + trailsResponse.trails[i].name);
+        console.log("TRAILS: " + trailsResponse.trails[i].url);
+        console.log("TRAILS: " + trailsResponse.trails[i].imgMedium);
+    }
+
+}
 
 

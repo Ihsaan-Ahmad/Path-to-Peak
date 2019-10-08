@@ -134,23 +134,15 @@ function locationAPICall(locationResponse) {
 
 
 // Trails 
-function trails(latitude, longitude) {
+function trails(latitude, longitude, populateElement) {
   var trailsUrl = "https://www.hikingproject.com/data/get-trails?lat=" + latitude + "&lon=" + longitude + "&maxDistance=30&key=200612410-9f382d3dcd1ea30e2507f860ebe7ef29"
   $.ajax({
     method: "GET",
-    url: trailsUrl
-  }).then(trailsAPICall);
+    url: trailsUrl,
+  }).then(populateElement);
 }
 
-function trailsAPICall(trailsResponse) {
-  // console.log("TRAILS: " + JSON.stringify(trailsResponse.trails));
-  trailImage = JSON.stringify(trailsResponse.trails[0].imgMedium);
-  for (var i = 0; i < trailsResponse.trails.length; i++) {
-    console.log("TRAILS: " + JSON.stringify(trailsResponse.trails[i].name));
-    console.log("TRAILS: " + JSON.stringify(trailsResponse.trails[i].url));
-    console.log("TRAILS: " + JSON.stringify(trailsResponse.trails[i].imgMedium));
-  }
-}
+
 
 
 
