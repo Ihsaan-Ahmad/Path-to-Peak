@@ -74,16 +74,18 @@ function populateModal(trailsResponse) {
         // console.log("TRAILS: " + trailsResponse.trails[i].name);
 
 
-        var trailName = $("<p id='trailName'>")
-        trailName.text(trailsResponse.trails[i].name);
+        // var trailName = $("<p id='trailName'>")
+        // trailName.text(trailsResponse.trails[i].name);
         // console.log("TRAILS: " + trailsResponse.trails[i].url);
         var trailInfo = $("<p>")
+        trailInfo.append(trailsResponse.trails[i].name + "<br>");
+        trailInfo.append("Distance: " + trailsResponse.trails[i].length + " miles" + "<br>");
         trailInfo.append("More information: <a href='" + trailsResponse.trails[i].url + "' target=_blank>" + trailsResponse.trails[i].url + "</a>");
         // console.log("TRAILS: " + trailsResponse.trails[i].imgMedium);
         trailInfo.append("<br>")
-        trailInfo.append("Distance: " + trailsResponse.trails[i].length + " miles");
 
-        trailName.appendTo($(".modal-body"));
+
+        // trailName.appendTo($(".modal-body"));
         trailInfo.appendTo($(".modal-body"));
     }
 
