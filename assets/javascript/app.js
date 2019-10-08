@@ -17,7 +17,7 @@ function imageScroller() {
 
 imageScroller();
 
-$(document).on("click", ".NPSBtn", function() {
+$(document).on("click", ".NPSBtn", function () {
   event.preventDefault();
   $(".spotify").show();
   $("#searchButton").show();
@@ -97,10 +97,10 @@ function NPSAjaxRequest() {
   var state = $(".form-control").val().trim();
   console.log("STATE: " + state);
   if (state.length > 2) {
-  var stateAcronym = abbrState(state, 'abbr')
-  stateSelected = stateAcronym;
-  console.log("ACRONYM: " + stateAcronym);
-  console.log(stateSelected)
+    var stateAcronym = abbrState(state, 'abbr')
+    stateSelected = stateAcronym;
+    console.log("ACRONYM: " + stateAcronym);
+    console.log(stateSelected)
   }
   else {
     stateSelected = state;

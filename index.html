@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        <link rel="shortcut icon" type="image/png" href="assets/images/trails.png">
+    <link rel="shortcut icon" type="image/png" href="assets/images/trails.png">
 
 </head>
 
@@ -32,28 +32,32 @@
 
     <div class="main-container container mx-auto">
         <div>
-            <a class="NPSBtn animated fadeIn" id="NPSButton" target="_blank"><img src="assets/images/NPS-sign1.png" id="startMeUp">
+            <a class="NPSBtn animated fadeIn" id="NPSButton" target="_blank"><img src="assets/images/NPS-sign1.png"
+                    id="startMeUp">
                 <!-- In the main container we will start with the leafLet Map showing all the tooltips for the National Parks -->
-            <h2 class="clickEnter">CLICK TO ENTER</h2> </a>
-            <h2 class="npfont parksNear animated fadeIn" id="putItIn"><i class="fas fa-compass"></i> NATIONAL PARKS NEAR ME <i class="fas fa-tree"></i>
+                <h2 class="clickEnter">CLICK TO ENTER</h2>
+            </a>
+            <h2 class="npfont parksNear animated fadeIn" id="putItIn"><i class="fas fa-compass"></i> NATIONAL PARKS NEAR
+                ME <i class="fas fa-tree"></i>
             </h2>
             <div>
-                    <div class="spotify animated fadeIn">
+                <div class="spotify animated fadeIn">
                     <iframe src="https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX5Q5wA1hY6bS"
                         width="300" height="80" frameborder="0" allowtransparency="true"
                         allow="encrypted-media"></iframe>
                 </div>
                 <div class="typeState">
-                    <h3 class="typeStateText animated fadeIn" id="fillMe">TYPE IN THE STATE YOU WOULD LIKE TO SEARCH</h3>
+                    <h3 class="typeStateText animated fadeIn" id="fillMe">TYPE IN THE STATE YOU WOULD LIKE TO SEARCH
+                    </h3>
                 </div>
             </div>
             <!-- The user will put a state in and on click the container will change the map into cards with all the parks in that state-->
             <!-- on click of the card a modal will pop up with all the info -->
             <!-- <form class="form"> -->
-                <div id="searchBar">
-                    <input class="form-control mr-sm-2 animated fadeIn" id="state-entered" type="search"
-                    placeholder="Enter your state here"aria-label="Search">
-                        <i class="fas fa-search fa-2x stateBtnClass animated fadeIn" id="stateButton"></i>
+            <div id="searchBar">
+                <input class="form-control mr-sm-2 animated fadeIn" id="state-entered" type="search"
+                    placeholder="Enter your state here" aria-label="Search">
+                <i class="fas fa-search fa-2x stateBtnClass animated fadeIn" id="stateButton"></i>
 
             </div>
             <button class="btn btn-outline-secondary my-2 my-sm-0" id="searchButton" type="submit"><i
@@ -81,6 +85,7 @@
                     </button>
                 </div>
                 <img id="modalImage" src="assets/images/tetons.jpeg" class="card-img-top">
+                <img id="modalMap" src="..." class="card-img-top">
                 <div class="modal-body">
                 </div>
                 <div class="modal-footer">
@@ -95,9 +100,12 @@
         <div class="container byeFoot animated fadeIn">
             <!-- Copyright &copy; -->
             <p id="npsInfo">LEARN MORE ABOUT NPS</p>
-            <a href="https://twitter.com/NatlParkService?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" class="fab fa-twitter-square fa-2x"></a> 
-            <a href="https://www.facebook.com/nationalparkservice" target="_blank" class="fab fa-facebook-square fa-2x"></a>
-            <a href="https://www.instagram.com/nationalparkservice/?hl=en" target="_blank" class="fab fa-instagram fa-2x"></a>
+            <a href="https://twitter.com/NatlParkService?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                target="_blank" class="fab fa-twitter-square fa-2x"></a>
+            <a href="https://www.facebook.com/nationalparkservice" target="_blank"
+                class="fab fa-facebook-square fa-2x"></a>
+            <a href="https://www.instagram.com/nationalparkservice/?hl=en" target="_blank"
+                class="fab fa-instagram fa-2x"></a>
         </div>
     </footer>
     <!-- Optional JavaScript -->
