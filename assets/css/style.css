@@ -157,7 +157,8 @@ a:hover {
 }
 
 #stateCardImage {
-  max-height: 250px;
+  height: 150px;
+  object-fit: scale-down;
 }
 
 #modalImage {
