@@ -162,6 +162,15 @@ a:hover {
   color: rgb(75, 56, 48);
 }
 
+#stateCardImage {
+  height: 150px;
+  object-fit: scale-down;
+}
+
+#modalImage {
+  max-height: 400px;
+  object-fit: scale-down;
+  
 #npsInfo {
   margin-bottom: 5px;
 }

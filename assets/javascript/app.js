@@ -33,7 +33,7 @@ $("#stateButton").click(function () {
 
 $("#takeMeHome").on("click", function () {
   event.preventDefault();
-  
+
   $("#searchBar").hide();
   $("#searchButton").show();
   $("#putItIn").show();
@@ -52,22 +52,24 @@ var stateSelected = "";
 var unsplashSearch = "";
 var region;
 var beerResponse = "";
+var county;
+var trailImage;
 
 //Images fixed and working AJAX
 //Unsplash API Below: We are working on having the Unsplash API information incorporate photo based on image and location.
-function unsplashAjaxRequest() {
-  var unsplashURL =
-    "https://api.unsplash.com/photos/random/?client_id=bf539b043528dafae4c292cea01214b50b01cdc58feb7880e0b4964fabcb0a86&query=" + unsplashSearch; //<---here is where our users search generates image related from API
-  $.ajax({
-    method: "GET",
-    url: unsplashURL
-  }).then(unsplashAPICall);
-}
+// function unsplashAjaxRequest() {
+//   var unsplashURL =
+//     "https://api.unsplash.com/photos/random/?client_id=bf539b043528dafae4c292cea01214b50b01cdc58feb7880e0b4964fabcb0a86&query=" + unsplashSearch; //<---here is where our users search generates image related from API
+//   $.ajax({
+//     method: "GET",
+//     url: unsplashURL
+//   }).then(unsplashAPICall);
+// }
 
-function unsplashAPICall(imgResponse) {
-  imageResponse = imgResponse;
-  console.log(imageResponse);
-}
+// function unsplashAPICall(imgResponse) {
+//   imageResponse = imgResponse;
+//   console.log(imageResponse);
+// }
 
 //National Park API is below
 
@@ -98,30 +100,52 @@ function NPSAjaxRequest() {
 function NPSAPICall(response) {
   console.log(response);
   stateCardGenerator(response);
-  // modelGenerator(response)
 }
-// For state requests
-// function beerAPI() {
-//     var beerURL ="https://sandbox-api.brewerydb.com/v2/" + region + "/?key=32a1127f99142177f29bc67c78a8a6d6"
-//     // "https://api.unsplash.com/photos/random/?client_id=b9429332b4931ea777d5218c2dd0c972e59aa521cdd7693c57ae030db53d17ef&query=" + region; //<---here is where our users search generates image related from API
-//     $.ajax({
-//       method: "GET: /brewery/:breweryId/locations",
-//       url: beerURL
-//     }).then(beerAPI);
-//   }
-//   function beerAPICall(beerdbResponse) {
-//     console.log(beerResponse);
-//     beerResponse = beerdbResponse;
 
-//   };
 
 function bothAjaxRequests(event) {
   event.preventDefault();
 
-  unsplashAjaxRequest();
+  //unsplashAjaxRequest();
   NPSAjaxRequest();
 }
 $("#stateButton").on("click", bothAjaxRequests);
+
+// Geolocation
+function geolocation(latitude, longitude) {
+  var locationUrl =
+    "https://api.opencagedata.com/geocode/v1/json?q=" + latitude + "%2C" + longitude + "&key=56b3edc6998940e095b41f02d7376b21&pretty=1"
+  $.ajax({
+    method: "GET",
+    url: locationUrl
+  }).then(locationAPICall);
+}
+
+function locationAPICall(locationResponse) {
+  geoResponse = locationResponse
+  console.log(geoResponse);
+  console.log("this console log ran");
+  var city = (geoResponse.results[0].components.city);
+  county = (geoResponse.results[0].components.county);
+  console.log("City: " + city);
+  console.log("county: " + county)
+
+}
+
+
+// Trails 
+function trails(latitude, longitude, maxResults, maxDistance, populateElement, element) {
+  var trailsUrl = "https://www.hikingproject.com/data/get-trails?lat=" + latitude + "&lon=" + longitude + "&maxDistance=" + maxDistance + "&maxResults=" + maxResults + "&key=200612410-9f382d3dcd1ea30e2507f860ebe7ef29"
+  $.ajax({
+    method: "GET",
+    element: element,
+    url: trailsUrl,
+  }).then(populateElement);
+}
+
+
+
+
 
 
 // HOME PAGE====================================================================================================
