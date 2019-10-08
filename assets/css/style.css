@@ -106,17 +106,12 @@ input {
 .typeStateText,
 .parksNear,
 .spotify,
-.byeFoot {
+.byeFoot, 
+#searchButton {
   animation-duration: 3s;
 }
 
 #mapid { height: 380px; }
-
-#showModal {
-    color: rgb(75, 56, 48);
-    border-radius: 10px;
-    border: 2px solid rgb(15, 63, 39);
-}
 
 .modal-header {
   color: rgb(15, 63, 39);
@@ -130,7 +125,7 @@ input {
 .modal-body {
   font-family: "npfont";
   src: url("./NationalPark-Outline.otf"); 
-  color: rgb(15, 63, 39);
+  color: rgb(75, 56, 48);
   /* font-weight: lighter; */
 }
 
@@ -157,6 +152,7 @@ input {
 }
 
 .btn:hover {
+  color: whitesmoke;
   background: rgb(15, 63, 39);
 }
 
