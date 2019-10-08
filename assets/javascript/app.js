@@ -129,25 +129,19 @@ function bothAjaxRequests(event) {
 $("#stateButton").on("click", bothAjaxRequests);
 
 // Geolocation
-function geolocation(latitude, longitude) {
+function geolocation(latitude, longitude, populateLocation, element) {
+
+
   var locationUrl =
     "https://api.opencagedata.com/geocode/v1/json?q=" + latitude + "%2C" + longitude + "&key=56b3edc6998940e095b41f02d7376b21&pretty=1"
   $.ajax({
     method: "GET",
+    element: element,
     url: locationUrl
-  }).then(locationAPICall);
+  }).then(populateLocation);
 }
 
-function locationAPICall(locationResponse) {
-  geoResponse = locationResponse
-  console.log(geoResponse);
-  console.log("this console log ran");
-  var city = (geoResponse.results[0].components.city);
-  county = (geoResponse.results[0].components.county);
-  console.log("City: " + city);
-  console.log("county: " + county)
 
-}
 
 
 // Trails 

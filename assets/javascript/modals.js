@@ -16,7 +16,7 @@ $(document).on("click", ".card-body", function () {
         latitude = modalInfo.latLong.split(",")[0].split(":")[1].trim();
         longitude = modalInfo.latLong.split(",")[1].split(":")[1].trim();
         console.log("LAT AND LONG: " + latLong);
-        geolocation(latitude, longitude)
+
         console.log(modalInfo);
         var maxResults = 5;
         var maxDistance = 30;
@@ -46,7 +46,7 @@ $(document).on("click", ".card-body", function () {
     modalCounty.text(county);
     console.log("MODAL COUNTY: " + county); //Working second API
     modalBody.append(modalCounty);
-
+    geolocation(latitude, longitude, populateLocation, modalCounty)
     modalBody.append(modalInfo.description);
     var modalP = $("<p>");
     modalP.append("<a href='" + modalInfo.url + "' target=_blank>" + modalInfo.url + "</a>");
@@ -94,3 +94,8 @@ function populateModal(trailsResponse) {
 }
 
 
+function populateLocation(locationResponse) {
+    console.log("this console log ran");
+    $(this.element).text(locationResponse.results[0].components.county);
+
+}
