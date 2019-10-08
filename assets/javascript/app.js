@@ -17,6 +17,17 @@ function imageScroller() {
 
 imageScroller();
 
+$(document).on("click", ".NPSBtn", function() {
+  event.preventDefault();
+  $(".spotify").show();
+  $("#searchButton").show();
+  $("#putItIn").show();
+  $(".NPSBtn").hide();
+  $(".byeFoot").show();
+  $("#takeMeHome").show();
+  $(".clickEnter").hide();
+});
+
 $("#searchButton").click(function () {
   event.preventDefault();
   $("#searchBar").show();
@@ -29,16 +40,22 @@ $("#stateButton").click(function () {
   $("#fillMe").hide();
   $("#searchBar").hide();
   $("#searchButton").hide();
+  // $("#state-entered").val("");
 });
 
 $("#takeMeHome").on("click", function () {
   event.preventDefault();
-
+  $(".spotify").hide();
   $("#searchBar").hide();
-  $("#searchButton").show();
-  $("#putItIn").show();
+  $("#searchButton").hide();
+  $("#putItIn").hide();
   $("#fillMe").hide();
   $(".cardsGoHere").empty();
+  $(".byeFoot").hide();
+  $(".NPSBtn").show();
+  $(".clickEnter").show();
+  $("#takeMeHome").hide();
+  $("#state-entered").val("");
 });
 
 
@@ -80,10 +97,10 @@ function NPSAjaxRequest() {
   var state = $(".form-control").val().trim();
   console.log("STATE: " + state);
   if (state.length > 2) {
-    var stateAcronym = abbrState(state, 'abbr')
-    stateSelected = stateAcronym;
-    console.log("ACRONYM: " + stateAcronym);
-    console.log(stateSelected)
+  var stateAcronym = abbrState(state, 'abbr')
+  stateSelected = stateAcronym;
+  console.log("ACRONYM: " + stateAcronym);
+  console.log(stateSelected)
   }
   else {
     stateSelected = state;
@@ -149,24 +166,6 @@ function trails(latitude, longitude, maxResults, maxDistance, populateElement, e
 
 
 // HOME PAGE====================================================================================================
-// "take me home" button says take me home
-
-// $('#showModal').on('click', function() {
-//     // jQuery.noConflict();
-//     $('#showModal').modal('show');
-//     });
-
-// $('#exampleModal').on('show.bs.modal', function (event) {
-//     var button = $(event.relatedTarget) // Button that triggered the modal
-//     var recipient = button.data('whatever') // Extract info from data-* attributes
-//     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-//     // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-//     var modal = $(this)
-//     modal.find('.modal-title').text('New message to ' + recipient)
-//     modal.find('.modal-body input').val(recipient)
-//   })
-
-
 // LINDSAY: ON STATE PAGE ======================================================================================
 
 // When user enters a state into the search bar it hides container containing home page html

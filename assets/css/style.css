@@ -12,6 +12,16 @@ h1, h2, h3 {
   color: rgb(75, 56, 48);
 }
 
+.spotify, .byeFoot, #putItIn, #searchButton, #takeMeHome {
+  display: none;
+}
+
+#startMeUp {
+  max-width: 450px;
+  max-height: 550px;
+  cursor: pointer;
+}
+
 nav {
   position: fixed;
   z-index: 99;
@@ -45,24 +55,6 @@ nav {
   opacity: 0.8;
   text-align: center;
   border: 4px solid rgb(15, 63, 39);
-}
-
-footer {
-  clear: both;
-  font-size: 20px;
-  color: #ffffff;
-  color: rgb(15, 63, 39);
-  background: whitesmoke;
-  border-top: 4px solid rgb(75, 56, 48);
-  opacity: 0.8;
-  margin-top: 115px;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
 }
 
 #bg {
@@ -110,9 +102,15 @@ input {
 }
 
 .form-control,
-.stateBtnClass {
+.stateBtnClass,
+.typeStateText,
+.parksNear,
+.spotify,
+.byeFoot {
   animation-duration: 3s;
 }
+
+#mapid { height: 380px; }
 
 #showModal {
     color: rgb(75, 56, 48);
@@ -124,6 +122,10 @@ input {
   color: rgb(15, 63, 39);
 }
 
+.btnModal {
+  color: whitesmoke;
+  background-color: rgb(75, 56, 48);
+}
 
 .modal-body {
   font-family: "npfont";
@@ -175,6 +177,28 @@ a:hover {
 
 #npsInfo {
   margin-bottom: 5px;
+}
+
+.clickEnter {
+  cursor: pointer;
+}
+
+footer {
+  clear: both;
+  font-size: 20px;
+  color: #ffffff;
+  color: rgb(15, 63, 39);
+  background-color: whitesmoke;
+  border-top: 4px solid rgb(75, 56, 48);
+  margin-top: 115px;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0.8;
 }
 
 @media only screen and (max-width: 600px) {
