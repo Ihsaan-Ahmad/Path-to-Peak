@@ -134,8 +134,8 @@ function locationAPICall(locationResponse) {
 
 
 // Trails 
-function trails(latitude, longitude, maxResults, populateElement, element) {
-  var trailsUrl = "https://www.hikingproject.com/data/get-trails?lat=" + latitude + "&lon=" + longitude + "&maxDistance=30&maxResults=" + maxResults + "&key=200612410-9f382d3dcd1ea30e2507f860ebe7ef29"
+function trails(latitude, longitude, maxResults, maxDistance, populateElement, element) {
+  var trailsUrl = "https://www.hikingproject.com/data/get-trails?lat=" + latitude + "&lon=" + longitude + "&maxDistance=" + maxDistance + "&maxResults=" + maxResults + "&key=200612410-9f382d3dcd1ea30e2507f860ebe7ef29"
   $.ajax({
     method: "GET",
     element: element,

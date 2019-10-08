@@ -41,11 +41,12 @@ function stateCardGenerator(response) {
         stateContainer.append(stateParkCard);
 
         var maxResults = 1
+        var maxDistance = 10
 
         if (parkInfo.data[i].latLong !== "") {
             latitude = parkInfo.data[i].latLong.split(",")[0].split(":")[1].trim();
             longitude = parkInfo.data[i].latLong.split(",")[1].split(":")[1].trim();
-            trails(latitude, longitude, maxResults, populateImage, stateImage);
+            trails(latitude, longitude, maxResults, maxDistance, populateImage, stateImage);
         }
 
     }

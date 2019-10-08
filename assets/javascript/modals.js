@@ -19,7 +19,8 @@ $(document).on("click", ".card-body", function () {
         geolocation(latitude, longitude)
         console.log(modalInfo);
         var maxResults = 5;
-        trails(latitude, longitude, maxResults, populateModal);
+        var maxDistance = 30;
+        trails(latitude, longitude, maxResults, maxDistance, populateModal);
     }
 
 
