@@ -31,7 +31,7 @@ $(document).on("click", ".card-body", function () {
         var newLatLong = lat[0] + "," + long;
         var mapQuestURL =
             "https://www.mapquestapi.com/staticmap/v5/map?key=z6PBR6qx8lWl8cEdyIAZeugWPfk3nA9V&center=" +
-            newLatLong;
+            newLatLong + "&size=600,200";
         console.log(mapQuestURL); //<---here is where our users search generates image related from API
         var parkDesignation = modalInfo.designation;
         var parkCode = modalInfo.parkCode;
