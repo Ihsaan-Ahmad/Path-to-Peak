@@ -1,12 +1,5 @@
 function stateCardGenerator(response) {
 
-
-
-    // Unsplash search depends on how we are able to get images to load
-
-
-
-
     parkInfo = response;
     // console.log(parkInfo);
     // Generating all park names and designations in the state
@@ -17,10 +10,6 @@ function stateCardGenerator(response) {
         var parkName = parkInfo.data[i].fullName;
         var parkDesignation = parkInfo.data[i].designation;
         var parkCode = parkInfo.data[i].parkCode;
-        // Image from Unsplash
-
-        // console.log(parkName);
-        // console.log(parkDesignation);
 
         // State Cards Generator
         // Create new div to hold the card
