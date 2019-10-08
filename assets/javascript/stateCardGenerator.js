@@ -15,11 +15,10 @@ function stateCardGenerator(response) {
     var stateContainer = $(".cardsGoHere");
     for (i = 0; i < numParks; i++) {
         var parkName = parkInfo.data[i].fullName;
-        unsplashSearch = parkName;
         var parkDesignation = parkInfo.data[i].designation;
         var parkCode = parkInfo.data[i].parkCode;
         // Image from Unsplash
-        var parkImage = imageResponse.urls.full;
+
         // console.log(parkName);
         // console.log(parkDesignation);
 
@@ -29,9 +28,9 @@ function stateCardGenerator(response) {
         // Append card elements 
         stateParkCard.addClass("card card-body")
         stateParkCard.attr({ "data-toggle": "modal", "data-target": "#exampleModalCenter", "data-value": parkCode });
-        var stateImage = $("<img>").attr({ src: parkImage, class: "card-img-top", alt: "..." })
-        stateParkCard.append(stateImage)
         // var stateParkCardBody = $("<div class='card-body'>")
+        var stateImage = $("<img>").attr({ src: "../images/NPS-sign1.png", class: "card-img-top", alt: "..." })
+        stateParkCard.append(stateImage)
         // stateParkCard.append(stateParkCardBody)
         var stateParkCardHeader = $("<h5 class='card-title'>")
         stateParkCardHeader.text(parkName)
@@ -40,6 +39,15 @@ function stateCardGenerator(response) {
         stateParkCardP.text(parkDesignation);
         stateParkCard.append(stateParkCardP);
         stateContainer.append(stateParkCard);
+
+        var maxResults = 1
+
+        if (parkInfo.data[i].latLong !== "") {
+            latitude = parkInfo.data[i].latLong.split(",")[0].split(":")[1].trim();
+            longitude = parkInfo.data[i].latLong.split(",")[1].split(":")[1].trim();
+            trails(latitude, longitude, maxResults, populateImage, stateImage);
+        }
+
     }
     console.log(parkInfo)
 
@@ -47,3 +55,13 @@ function stateCardGenerator(response) {
 
 
 };
+
+
+function populateImage(trailsResponse) {
+    $(this.element).attr("src", trailsResponse.trails[0].imgMedium);
+
+    console.log("trailsresponse per card:");
+    console.log(trailsResponse);
+
+
+}

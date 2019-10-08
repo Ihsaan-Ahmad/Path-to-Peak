@@ -57,19 +57,19 @@ var trailImage;
 
 //Images fixed and working AJAX
 //Unsplash API Below: We are working on having the Unsplash API information incorporate photo based on image and location.
-function unsplashAjaxRequest() {
-  var unsplashURL =
-    "https://api.unsplash.com/photos/random/?client_id=bf539b043528dafae4c292cea01214b50b01cdc58feb7880e0b4964fabcb0a86&query=" + unsplashSearch; //<---here is where our users search generates image related from API
-  $.ajax({
-    method: "GET",
-    url: unsplashURL
-  }).then(unsplashAPICall);
-}
+// function unsplashAjaxRequest() {
+//   var unsplashURL =
+//     "https://api.unsplash.com/photos/random/?client_id=bf539b043528dafae4c292cea01214b50b01cdc58feb7880e0b4964fabcb0a86&query=" + unsplashSearch; //<---here is where our users search generates image related from API
+//   $.ajax({
+//     method: "GET",
+//     url: unsplashURL
+//   }).then(unsplashAPICall);
+// }
 
-function unsplashAPICall(imgResponse) {
-  imageResponse = imgResponse;
-  console.log(imageResponse);
-}
+// function unsplashAPICall(imgResponse) {
+//   imageResponse = imgResponse;
+//   console.log(imageResponse);
+// }
 
 //National Park API is below
 
@@ -106,7 +106,7 @@ function NPSAPICall(response) {
 function bothAjaxRequests(event) {
   event.preventDefault();
 
-  unsplashAjaxRequest();
+  //unsplashAjaxRequest();
   NPSAjaxRequest();
 }
 $("#stateButton").on("click", bothAjaxRequests);
@@ -134,10 +134,11 @@ function locationAPICall(locationResponse) {
 
 
 // Trails 
-function trails(latitude, longitude, populateElement) {
-  var trailsUrl = "https://www.hikingproject.com/data/get-trails?lat=" + latitude + "&lon=" + longitude + "&maxDistance=30&key=200612410-9f382d3dcd1ea30e2507f860ebe7ef29"
+function trails(latitude, longitude, maxResults, populateElement, element) {
+  var trailsUrl = "https://www.hikingproject.com/data/get-trails?lat=" + latitude + "&lon=" + longitude + "&maxDistance=30&maxResults=" + maxResults + "&key=200612410-9f382d3dcd1ea30e2507f860ebe7ef29"
   $.ajax({
     method: "GET",
+    element: element,
     url: trailsUrl,
   }).then(populateElement);
 }

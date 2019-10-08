@@ -18,7 +18,8 @@ $(document).on("click", ".card-body", function () {
         console.log("LAT AND LONG: " + latLong);
         geolocation(latitude, longitude)
         console.log(modalInfo);
-        trails(latitude, longitude, populateModal);
+        var maxResults = 5;
+        trails(latitude, longitude, maxResults, populateModal);
     }
 
 
@@ -50,6 +51,8 @@ function populateModal(trailsResponse) {
 
     trailImage = trailsResponse.trails[0].imgMedium;
     $("#modalImage").attr("src", trailImage);
+
+
     for (var i = 0; i < trailsResponse.trails.length; i++) {
         console.log("TRAILS: " + trailsResponse.trails[i].name);
         console.log("TRAILS: " + trailsResponse.trails[i].url);
