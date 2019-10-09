@@ -4,8 +4,27 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "npfontthin";
+  src: url("./NationalPark-Thin.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "npfontregular";
+  src: url("./NationalPark-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1, h2, h3 {
   color: rgb(15, 63, 39);
+}
+
+.card-text {
+  font-family: "npfontregular"
 }
 
 .fas {
@@ -52,7 +71,7 @@ nav {
   margin: 20px;
   margin-bottom: 130px;
   background-color: whitesmoke;
-  opacity: 0.8;
+  opacity: 0.9;
   text-align: center;
   border: 4px solid rgb(15, 63, 39);
 }
@@ -70,7 +89,7 @@ nav {
 
 body {
   font-family: "npfont";
-  src: url("./NationalPark-Heavy.otf"); 
+  
 }
 
 .cardsGoHere {
@@ -106,7 +125,8 @@ input {
 .typeStateText,
 .parksNear,
 .spotify,
-.byeFoot {
+.byeFoot, 
+#searchButton{
   animation-duration: 3s;
 }
 
@@ -131,7 +151,14 @@ input {
   font-family: "npfont";
   src: url("./NationalPark-Outline.otf"); 
   color: rgb(15, 63, 39);
-  /* font-weight: lighter; */
+}
+
+.modal p {
+  font-family: "npfontthin";
+}
+
+.npfontThin {
+  font-weight: bold;
 }
 
 #fillMe {
@@ -204,6 +231,20 @@ footer {
   width: 100%;
   text-align: center;
   opacity: 0.8;
+}
+
+.modal a {
+  color: rgb(75, 56, 48);
+}
+
+.modal h5 {
+  font-size: 40px;
+  border-bottom: 4px solid rgb(75, 56, 48);
+}
+
+.modal img {
+  border-radius: 20px;
+  border: 1px solid rgb(15, 63, 39);
 }
 
 @media only screen and (max-width: 600px) {

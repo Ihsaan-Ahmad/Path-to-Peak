@@ -43,9 +43,6 @@ function stateCardGenerator(response) {
     }
     console.log(parkInfo)
 
-
-
-
 };
 
 
@@ -59,7 +56,6 @@ function populateImage(trailsResponse) {
         $(this).attr("src", 'assets/images/NPS-sign1.png');
 
     }
-
     console.log("trailsresponse per card:");
     console.log(trailsResponse);
 
