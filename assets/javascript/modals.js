@@ -42,12 +42,12 @@ $(document).on("click", ".card-body", function () {
     var modalTitle = $(".modal-title")
     modalTitle.append(modalInfo.name + " " + modalInfo.designation);
     var modalBody = $(".modal-body");
-    var modalCounty = $("<p>");
+    var modalCounty = $("<h4>");
     modalCounty.text(county);
     console.log("MODAL COUNTY: " + county); //Working second API
     modalBody.append(modalCounty);
     geolocation(latitude, longitude, populateLocation, modalCounty)
-    modalBody.append(modalInfo.description);
+    modalBody.append("<p class='npfontthin'>" + modalInfo.description + "</p>");
     var modalP = $("<p>");
     modalP.append("<a href='" + modalInfo.url + "' target=_blank>" + modalInfo.url + "</a>");
     modalBody.append(modalP);
@@ -79,12 +79,13 @@ function populateModal(trailsResponse) {
         // var trailName = $("<p id='trailName'>")
         // trailName.text(trailsResponse.trails[i].name);
         // console.log("TRAILS: " + trailsResponse.trails[i].url);
-        var trailInfo = $("<p>")
-        trailInfo.append(trailsResponse.trails[i].name + "<br>");
-        trailInfo.append("Distance: " + trailsResponse.trails[i].length + " miles" + "<br>");
-        trailInfo.append("More information: <a href='" + trailsResponse.trails[i].url + "' target=_blank>" + trailsResponse.trails[i].url + "</a>");
+        var trailInfo = $("<div>")
+        trailInfo.append("<h4 class='mb-0'>" + trailsResponse.trails[i].name + "</h4>");
+
+        trailInfo.append("<p class='mb-0'>Distance: " + trailsResponse.trails[i].length + " miles</p>");
+        trailInfo.append("<p class='mb-3'>More information: <a href='" + trailsResponse.trails[i].url + "' target=_blank>" + trailsResponse.trails[i].url + "</a></p>");
         // console.log("TRAILS: " + trailsResponse.trails[i].imgMedium);
-        trailInfo.append("<br>")
+        // trailInfo.append("<br>")
 
 
         // trailName.appendTo($(".modal-body"));
